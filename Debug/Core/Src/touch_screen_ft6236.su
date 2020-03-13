@@ -1,0 +1,8 @@
+touch_screen_ft6236.c:13:6:Ft6236_Read_Register	40	static
+touch_screen_ft6236.c:27:6:Ft6236_Write_Register	40	static
+touch_screen_ft6236.c:41:6:Ft6236_Init	8	static
+touch_screen_ft6236.c:52:6:Ft6236_Read	16	static
+touch_screen_ft6236.c:78:6:Ft6236_TS_DetectTouch	4	static
+touch_screen_ft6236.c:82:10:Ft6236_TS_GetX	4	static
+touch_screen_ft6236.c:86:10:Ft6236_TS_GetY	4	static
+touch_screen_ft6236.c:90:6:BSP_TS_GetState	16	static

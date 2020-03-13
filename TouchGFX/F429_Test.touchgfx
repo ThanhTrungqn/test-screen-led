@@ -1,0 +1,481 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Components": [
+          {
+            "RelativeFilename": "bg-image.png",
+            "Alpha": 255,
+            "Name": "image1",
+            "X": 0,
+            "Y": 0,
+            "Width": 240,
+            "Height": 320,
+            "Type": "Image",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Components": [
+              {
+                "IsHorizontalSlider": false,
+                "BackgroundUnselected": "__designer\\custom_slider-speed-bg.png",
+                "BackgroundSelected": "slider-speed-front.png",
+                "Indicator": "__designer\\custom_slider-speed-button.png",
+                "BackgroundX": 2,
+                "BackgroundY": 3,
+                "IndicatorPos": 5,
+                "IndicatorMax": 142,
+                "IndicatorMin": 0,
+                "ValueMax": 50,
+                "ValueMin": 0,
+                "InitValue": 0,
+                "Name": "slider_strength",
+                "X": 0,
+                "Y": 4,
+                "Width": 75,
+                "Height": 147,
+                "Type": "Slider",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "TextId": "SingleUseId6",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Alpha": 255,
+                "AutoSize": true,
+                "LineSpacing": 0,
+                "Wildcard1": {
+                  "TextId": "SingleUseId13",
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                },
+                "Name": "textArea_strength_low",
+                "X": 29,
+                "Y": 77,
+                "Width": 25,
+                "Height": 31,
+                "Type": "TextArea",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "TextId": "SingleUseId5",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Alpha": 255,
+                "AutoSize": true,
+                "LineSpacing": 0,
+                "Wildcard1": {
+                  "TextId": "SingleUseId12",
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                },
+                "Name": "textArea_strength_height",
+                "X": 6,
+                "Y": 67,
+                "Width": 23,
+                "Height": 44,
+                "Type": "TextArea",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "TextId": "SingleUseId4",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Alpha": 219,
+                "AutoSize": true,
+                "LineSpacing": 0,
+                "Name": "textArea3",
+                "X": 6,
+                "Y": 45,
+                "Width": 57,
+                "Height": 16,
+                "Type": "TextArea",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "RelativeFilename": "play-ic.png",
+                "Alpha": 255,
+                "Name": "image2",
+                "X": 6,
+                "Y": 24,
+                "Width": 16,
+                "Height": 16,
+                "Type": "Image",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              }
+            ],
+            "IsCacheableContainer": false,
+            "Name": "container1",
+            "X": 137,
+            "Y": 83,
+            "Width": 82,
+            "Height": 148,
+            "Type": "Container",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "Components": [
+              {
+                "IsHorizontalSlider": false,
+                "BackgroundUnselected": "__designer\\custom_slider-speed-bg.png",
+                "BackgroundSelected": "__designer\\custom_slider-speed-front.png",
+                "Indicator": "__designer\\custom_slider-speed-button.png",
+                "BackgroundX": 0,
+                "BackgroundY": 3,
+                "IndicatorPos": 5,
+                "IndicatorMax": 143,
+                "IndicatorMin": 0,
+                "ValueMax": 50,
+                "ValueMin": 0,
+                "InitValue": 0,
+                "Name": "slider_speed",
+                "X": 0,
+                "Y": 3,
+                "Width": 75,
+                "Height": 148,
+                "Type": "Slider",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "TextId": "SingleUseId7",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Alpha": 255,
+                "AutoSize": true,
+                "LineSpacing": 0,
+                "Wildcard1": {
+                  "TextId": "SingleUseId11",
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                },
+                "Name": "textArea_speed_low",
+                "X": 29,
+                "Y": 77,
+                "Width": 25,
+                "Height": 31,
+                "Type": "TextArea",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "TextId": "SingleUseId8",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Alpha": 255,
+                "AutoSize": true,
+                "LineSpacing": 0,
+                "Wildcard1": {
+                  "TextId": "SingleUseId10",
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                },
+                "Name": "textArea_speed_height",
+                "X": 6,
+                "Y": 67,
+                "Width": 23,
+                "Height": 44,
+                "Type": "TextArea",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "TextId": "SingleUseId9",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Alpha": 219,
+                "AutoSize": true,
+                "LineSpacing": 0,
+                "Name": "textArea3_1",
+                "X": 6,
+                "Y": 45,
+                "Width": 41,
+                "Height": 16,
+                "Type": "TextArea",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              },
+              {
+                "RelativeFilename": "play-ic.png",
+                "Alpha": 255,
+                "Name": "image2_1",
+                "X": 6,
+                "Y": 24,
+                "Width": 16,
+                "Height": 16,
+                "Type": "Image",
+                "Visible": true,
+                "Draggable": false,
+                "Clickable": false,
+                "Fadeable": false,
+                "Moveable": false
+              }
+            ],
+            "IsCacheableContainer": false,
+            "Name": "container1_1",
+            "X": 30,
+            "Y": 83,
+            "Width": 81,
+            "Height": 148,
+            "Type": "Container",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "IsHorizontalSlider": true,
+            "BackgroundUnselected": "__designer\\custom_slider-lux-bg.png",
+            "BackgroundSelected": "__designer\\custom_slider-lux-front.png",
+            "Indicator": "__designer\\custom_slider-lux-button.png",
+            "BackgroundX": 3,
+            "BackgroundY": 0,
+            "IndicatorPos": 0,
+            "IndicatorMax": 151,
+            "IndicatorMin": 0,
+            "ValueMax": 100,
+            "ValueMin": 0,
+            "InitValue": 31,
+            "Name": "slider1",
+            "X": 29,
+            "Y": 261,
+            "Width": 183,
+            "Height": 44,
+            "Type": "Slider",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "TextId": "SingleUseId14",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 255,
+            "AutoSize": true,
+            "LineSpacing": 0,
+            "Name": "textArea4",
+            "X": 77,
+            "Y": 32,
+            "Width": 113,
+            "Height": 35,
+            "Type": "TextArea",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          },
+          {
+            "InitialStatePressed": false,
+            "Pressed": "__designer\\Dark_Check_buttons_Check_Round_mark_active.png",
+            "Released": "__designer\\Dark_Check_buttons_Check_Round_mark_inactive.png",
+            "Alpha": 255,
+            "Name": "toggleButton1",
+            "X": 29,
+            "Y": 27,
+            "Width": 44,
+            "Height": 44,
+            "Type": "ToggleButton",
+            "Visible": true,
+            "Draggable": false,
+            "Clickable": false,
+            "Fadeable": false,
+            "Moveable": false
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "slider_speed",
+              "Type": "TriggerSliderValueChanged"
+            },
+            "Action": {
+              "Code": "memset(&textArea_speed_heightBuffer,0,TEXTAREA_SPEED_HEIGHT_SIZE);\r\nUnicode::snprintf(textArea_speed_heightBuffer, TEXTAREA_SPEED_HEIGHT_SIZE, \"%d\", (value - (value%10))/10 );\r\ntextArea_speed_height.invalidate();\r\n\r\nmemset(&textArea_speed_lowBuffer,0,TEXTAREA_SPEED_LOW_SIZE);\r\nUnicode::snprintf(textArea_speed_lowBuffer, TEXTAREA_SPEED_LOW_SIZE, \"%d\", (value%10));\r\ntextArea_speed_low.invalidate();",
+              "Type": "ActionExecuteCode"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "HasCompletedTrigger": false,
+            "Trigger": {
+              "TriggerComponent": "slider_strength",
+              "Type": "TriggerSliderValueChanged"
+            },
+            "Action": {
+              "Code": "memset(&textArea_strength_heightBuffer,0,TEXTAREA_STRENGTH_HEIGHT_SIZE);\r\nUnicode::snprintf(textArea_strength_heightBuffer, TEXTAREA_STRENGTH_HEIGHT_SIZE, \"%d\", (value - (value%10))/10 );\r\ntextArea_strength_height.invalidate();\r\n\r\nmemset(&textArea_strength_lowBuffer,0,TEXTAREA_STRENGTH_LOW_SIZE);\r\nUnicode::snprintf(textArea_strength_lowBuffer, TEXTAREA_STRENGTH_LOW_SIZE, \"%d\", (value%10));\r\ntextArea_strength_low.invalidate();",
+              "Type": "ActionExecuteCode"
+            }
+          }
+        ],
+        "Name": "Screen1",
+        "OverrideDefaultBufferSize": false,
+        "CanvasBufferSize": 0
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "TextEntries": [
+      {
+        "TextEntryId": "SingleUseId4",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId5",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId6",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId7",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId8",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId9",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId10",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId11",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId12",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId13",
+        "IsResource": false
+      },
+      {
+        "TextEntryId": "SingleUseId14",
+        "IsResource": false
+      }
+    ],
+    "Name": "test_lcd_F429_VIT",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "Skin": "Blue",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project --project-file=../test_lcd_F429_VIT.ioc --platform=m4",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait"
+  },
+  "Version": "4.13.0"
+}
