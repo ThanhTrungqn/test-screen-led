@@ -14,6 +14,6 @@ void Model::tick()
 }
 
 void Model::UpdateValue (){
-	value_update ++;
+	//value_update ++;
 	modelListener->UpdateValue(value_update);
 }

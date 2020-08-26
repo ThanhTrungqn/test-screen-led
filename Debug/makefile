@@ -10,16 +10,40 @@ RM := rm -rf
 -include sources.mk
 -include TouchGFX/target/generated/subdir.mk
 -include TouchGFX/target/subdir.mk
+-include TouchGFX/gui/src/screenwelcomewarning_screen/subdir.mk
+-include TouchGFX/gui/src/screenwelcomeanimation_screen/subdir.mk
+-include TouchGFX/gui/src/screenmenusettinglamp_screen/subdir.mk
+-include TouchGFX/gui/src/screenmenusettingbattery_screen/subdir.mk
+-include TouchGFX/gui/src/screencontrolsliderstrength_screen/subdir.mk
+-include TouchGFX/gui/src/screencontrolsliderspeed_screen/subdir.mk
+-include TouchGFX/gui/src/screencontrolsliderbrightness_screen/subdir.mk
+-include TouchGFX/gui/src/screencontrollampreading_screen/subdir.mk
+-include TouchGFX/gui/src/screencontrollampnormal_screen/subdir.mk
+-include TouchGFX/gui/src/screen2_screen/subdir.mk
 -include TouchGFX/gui/src/screen1_screen/subdir.mk
 -include TouchGFX/gui/src/model/subdir.mk
 -include TouchGFX/gui/src/common/subdir.mk
 -include TouchGFX/generated/texts/src/subdir.mk
 -include TouchGFX/generated/images/src/__designer/subdir.mk
 -include TouchGFX/generated/images/src/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screenwelcomewarning_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screenwelcomeanimation_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screenmenusettinglamp_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screenmenusettingbattery_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screencontrolsliderstrength_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screencontrolsliderspeed_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screencontrolsliderbrightness_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screencontrollampreading_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screencontrollampnormal_screen/subdir.mk
+-include TouchGFX/generated/gui_generated/src/screen2_screen/subdir.mk
 -include TouchGFX/generated/gui_generated/src/screen1_screen/subdir.mk
 -include TouchGFX/generated/gui_generated/src/common/subdir.mk
 -include TouchGFX/generated/fonts/src/subdir.mk
 -include TouchGFX/App/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/subdir.mk
+-include Middlewares/Third_Party/FreeRTOS/Source/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -51,27 +75,27 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-test_lcd_F429_VIT.elf \
+Level_Version_RTOS.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-test_lcd_F429_VIT.list \
+Level_Version_RTOS.list \
 
 OBJCOPY_HEX += \
-test_lcd_F429_VIT.hex \
+Level_Version_RTOS.hex \
 
 OBJCOPY_BIN += \
-test_lcd_F429_VIT.bin \
+Level_Version_RTOS.bin \
 
 
 # All Target
-all: test_lcd_F429_VIT.elf secondary-outputs
+all: Level_Version_RTOS.elf secondary-outputs
 
 # Tool invocations
-test_lcd_F429_VIT.elf: $(OBJS) $(USER_OBJS) C:\Users\tnguyen\STM32CubeIDE\workspace_1.1.0\test_lcd_F429_VIT\STM32F429VITX_FLASH.ld
-	arm-none-eabi-g++ -o "test_lcd_F429_VIT.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\tnguyen\STM32CubeIDE\workspace_1.1.0\test_lcd_F429_VIT\STM32F429VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test_lcd_F429_VIT.map" -Wl,--gc-sections -static -L"C:\Users\tnguyen\STM32CubeIDE\workspace_1.1.0\test_lcd_F429_VIT\Middlewares\ST\touchgfx\lib\core\cortex_m4f\gcc" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+Level_Version_RTOS.elf: $(OBJS) $(USER_OBJS) C:\Users\tnguyen\STM32CubeIDE\workspace_1.1.0\Level_Version_RTOS\STM32F429VITX_FLASH.ld
+	arm-none-eabi-g++ -o "Level_Version_RTOS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\tnguyen\STM32CubeIDE\workspace_1.1.0\Level_Version_RTOS\STM32F429VITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Level_Version_RTOS.map" -Wl,--gc-sections -static -L"C:\Users\tnguyen\STM32CubeIDE\workspace_1.1.0\test_lcd_F429_VIT\Middlewares\ST\touchgfx\lib\core\cortex_m4f\gcc" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -80,18 +104,18 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-test_lcd_F429_VIT.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "test_lcd_F429_VIT.list"
+Level_Version_RTOS.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Level_Version_RTOS.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-test_lcd_F429_VIT.hex: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "test_lcd_F429_VIT.hex"
+Level_Version_RTOS.hex: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Level_Version_RTOS.hex"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-test_lcd_F429_VIT.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "test_lcd_F429_VIT.bin"
+Level_Version_RTOS.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Level_Version_RTOS.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

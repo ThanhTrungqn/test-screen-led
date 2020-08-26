@@ -7,7 +7,9 @@
 #include <touchgfx/Color.hpp>
 
 Screen1ViewBase::Screen1ViewBase() :
-    sliderValueChangedCallback(this, &Screen1ViewBase::sliderValueChangedCallbackHandler)
+    sliderValueChangedCallback(this, &Screen1ViewBase::sliderValueChangedCallbackHandler),
+    radioButtonSelectedCallback(this, &Screen1ViewBase::radioButtonSelectedCallbackHandler),
+    radioButtonDeselectedCallback(this, &Screen1ViewBase::radioButtonDeselectedCallbackHandler)
 {
 
     image1.setXY(0, 0);
@@ -91,26 +93,32 @@ Screen1ViewBase::Screen1ViewBase() :
     image2_1.setBitmap(touchgfx::Bitmap(BITMAP_PLAY_IC_ID));
     container1_1.add(image2_1);
 
-    slider1.setXY(29, 261);
-    slider1.setBitmaps(touchgfx::Bitmap(BITMAP_CUSTOM_SLIDER_LUX_BG_ID), touchgfx::Bitmap(BITMAP_CUSTOM_SLIDER_LUX_FRONT_ID), touchgfx::Bitmap(BITMAP_CUSTOM_SLIDER_LUX_BUTTON_ID));
-    slider1.setupHorizontalSlider(3, 0, 0, 0, 151);
-    slider1.setValueRange(0, 100);
-    slider1.setValue(31);
+    slider_luminosity.setXY(29, 261);
+    slider_luminosity.setBitmaps(touchgfx::Bitmap(BITMAP_CUSTOM_SLIDER_LUX_BG_ID), touchgfx::Bitmap(BITMAP_CUSTOM_SLIDER_LUX_FRONT_ID), touchgfx::Bitmap(BITMAP_CUSTOM_SLIDER_LUX_BUTTON_ID));
+    slider_luminosity.setupHorizontalSlider(3, 0, 0, 0, 151);
+    slider_luminosity.setValueRange(0, 100);
+    slider_luminosity.setValue(0);
+    slider_luminosity.setNewValueCallback(sliderValueChangedCallback);
 
-    textArea4.setXY(77, 32);
+    textArea4.setXY(29, 34);
     textArea4.setColor(touchgfx::Color::getColorFrom24BitRGB(255, 255, 255));
     textArea4.setLinespacing(0);
     textArea4.setTypedText(touchgfx::TypedText(T_SINGLEUSEID14));
 
-    toggleButton1.setXY(29, 27);
-    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_CHECK_BUTTONS_CHECK_ROUND_MARK_INACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_CHECK_BUTTONS_CHECK_ROUND_MARK_ACTIVE_ID));
+    radioButton1.setXY(154, 28);
+    radioButton1.setBitmaps(touchgfx::Bitmap(BITMAP_TOGGLE_OFF_ID), touchgfx::Bitmap(BITMAP_TOGGLE_OFF_ID), touchgfx::Bitmap(BITMAP_TOGGLE_ON_ID), touchgfx::Bitmap(BITMAP_TOGGLE_ON_ID));
+    radioButton1.setSelected(false);
+    radioButton1.setDeselectionEnabled(true);
 
     add(image1);
     add(container1);
     add(container1_1);
-    add(slider1);
+    add(slider_luminosity);
     add(textArea4);
-    add(toggleButton1);
+    add(radioButton1);
+    radioButtonGroup1.add(radioButton1);
+    radioButtonGroup1.setRadioButtonSelectedHandler(radioButtonSelectedCallback);
+    radioButtonGroup1.setRadioButtonDeselectedHandler(radioButtonDeselectedCallback);
 }
 
 void Screen1ViewBase::setupScreen()
@@ -118,32 +126,61 @@ void Screen1ViewBase::setupScreen()
 
 }
 
+//Handles when a key is pressed
+void Screen1ViewBase::handleKeyEvent(uint8_t key)
+{
+    if(0 == key)
+    {
+        //Interaction5
+        //When hardware button 0 clicked change screen to Screen2
+        //Go to Screen2 with screen transition towards East
+        application().gotoScreen2ScreenSlideTransitionEast();
+    }
+}
+
 void Screen1ViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value)
 {
     if (&src == &slider_strength)
     {
         //Interaction2
-        //When slider_strength value changed execute C++ code
-        //Execute C++ code
-        memset(&textArea_strength_heightBuffer,0,TEXTAREA_STRENGTH_HEIGHT_SIZE);
-        Unicode::snprintf(textArea_strength_heightBuffer, TEXTAREA_STRENGTH_HEIGHT_SIZE, "%d", (value - (value%10))/10 );
-        textArea_strength_height.invalidate();
-        
-        memset(&textArea_strength_lowBuffer,0,TEXTAREA_STRENGTH_LOW_SIZE);
-        Unicode::snprintf(textArea_strength_lowBuffer, TEXTAREA_STRENGTH_LOW_SIZE, "%d", (value%10));
-        textArea_strength_low.invalidate();
+        //When slider_strength value changed call virtual function
+        //Call Update_Duty
+        Update_Duty(value);
     }
     else if (&src == &slider_speed)
     {
         //Interaction1
-        //When slider_speed value changed execute C++ code
-        //Execute C++ code
-        memset(&textArea_speed_heightBuffer,0,TEXTAREA_SPEED_HEIGHT_SIZE);
-        Unicode::snprintf(textArea_speed_heightBuffer, TEXTAREA_SPEED_HEIGHT_SIZE, "%d", (value - (value%10))/10 );
-        textArea_speed_height.invalidate();
-        
-        memset(&textArea_speed_lowBuffer,0,TEXTAREA_SPEED_LOW_SIZE);
-        Unicode::snprintf(textArea_speed_lowBuffer, TEXTAREA_SPEED_LOW_SIZE, "%d", (value%10));
-        textArea_speed_low.invalidate();
+        //When slider_speed value changed call virtual function
+        //Call Update_Freq
+        Update_Freq(value);
+    }
+    else if (&src == &slider_luminosity)
+    {
+        //Interaction3
+        //When slider_luminosity value changed call virtual function
+        //Call Update_Luminosity
+        Update_Luminosity(value);
+    }
+}
+
+void Screen1ViewBase::radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &radioButton1)
+    {
+        //Interaction6
+        //When radioButton1 selected call virtual function
+        //Call Update_Mode_Reading_ON
+        Update_Mode_Reading_ON();
+    }
+}
+
+void Screen1ViewBase::radioButtonDeselectedCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &radioButton1)
+    {
+        //Interaction7
+        //When radioButton1 deselected call virtual function
+        //Call Update_Mode_Reading_OFF
+        Update_Mode_Reading_OFF();
     }
 }

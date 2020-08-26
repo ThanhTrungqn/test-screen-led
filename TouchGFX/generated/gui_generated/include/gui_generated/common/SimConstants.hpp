@@ -6,6 +6,6 @@
 
 static unsigned short SIM_WIDTH = 240;
 static unsigned short SIM_HEIGHT = 320;
-#define SIM_TITLE "test_lcd_F429_VIT"
+#define SIM_TITLE "Level_Version_RTOS"
 
 #endif // SIMCONSTANTS_HPP

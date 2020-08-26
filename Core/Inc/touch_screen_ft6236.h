@@ -58,6 +58,15 @@ typedef struct
   uint16_t Y;
 }TS_StateTypeDef;
 
+typedef struct
+{
+  uint8_t Duty;
+  uint8_t Freq;
+  uint8_t Lum;
+  uint8_t Mode;
+}Lexi_StateTypeDef;
+
+
 
 void		Ft6236_Read_Register(uint8_t register_pointer, uint8_t* receive_buffer , uint8_t buffer_size);
 void 		Ft6236_Write_Register(uint8_t register_pointer, uint8_t register_value);
@@ -68,6 +77,7 @@ bool		Ft6236_TS_DetectTouch(void);
 uint16_t	Ft6236_TS_GetX(void);
 uint16_t	Ft6236_TS_GetY(void);
 void BSP_TS_GetState(TS_StateTypeDef* TsState);
+void BSP_Lexi_Set_Duty();
 
 
 #endif /* INC_TOUCH_SCREEN_FT6236_H_ */

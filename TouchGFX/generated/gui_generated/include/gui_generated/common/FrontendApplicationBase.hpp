@@ -15,16 +15,50 @@ public:
     FrontendApplicationBase(Model& m, FrontendHeap& heap);
     virtual ~FrontendApplicationBase() { }
 
+    // Screen2
+    void gotoScreen2ScreenNoTransition();
+
+    void gotoScreen2ScreenSlideTransitionEast();
+
     // Screen1
-    void gotoScreen1ScreenNoTransition();
+    void gotoScreen1ScreenSlideTransitionEast();
+
+    // ScreenControlSliderStrength
+    void gotoScreenControlSliderStrengthScreenNoTransition();
+
+    // ScreenControlSliderSpeed
+    void gotoScreenControlSliderSpeedScreenNoTransition();
+
+    // ScreenControlLampReading
+    void gotoScreenControlLampReadingScreenNoTransition();
+
+    // ScreenMenuSettingLamp
+    void gotoScreenMenuSettingLampScreenNoTransition();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;
 
+    // Screen2
+    void gotoScreen2ScreenNoTransitionImpl();
+
+    void gotoScreen2ScreenSlideTransitionEastImpl();
+
     // Screen1
-    void gotoScreen1ScreenNoTransitionImpl();
+    void gotoScreen1ScreenSlideTransitionEastImpl();
+
+    // ScreenControlSliderStrength
+    void gotoScreenControlSliderStrengthScreenNoTransitionImpl();
+
+    // ScreenControlSliderSpeed
+    void gotoScreenControlSliderSpeedScreenNoTransitionImpl();
+
+    // ScreenControlLampReading
+    void gotoScreenControlLampReadingScreenNoTransitionImpl();
+
+    // ScreenMenuSettingLamp
+    void gotoScreenMenuSettingLampScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

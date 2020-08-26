@@ -25,7 +25,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "lexilight.h"
-
+#include "uart_task.h"
 
 LEXILIGHT_DATA lexilight;
 
@@ -61,26 +61,20 @@ void Lexi_Task (TIM_HandleTypeDef htim_pwm_led, TIM_HandleTypeDef htim_pwm_lum_d
 			break;
 
 		case LIGHT_STATE_SERVICE:
-
-			//Get pwm defaut or eeprom
 			Lexi_DO_LED_PWM (htim_pwm_led);
 			Lexi_DO_PWM_LUM_DRIVER(htim_pwm_lum_driver);
-			lexilight.state = LIGHT_STATE_LEXI;
+			lexilight.state = LIGHT_STATE_ON;
 			break;
 
 		case LIGHT_STATE_LEXI:
 			Lexi_DO_LED_PWM (htim_pwm_led);
 			Lexi_DO_PWM_LUM_DRIVER(htim_pwm_lum_driver);
-			//Turn On EN_DRIVER
-			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13,GPIO_PIN_SET);
 			break;
 
 		case LIGHT_STATE_ON:
 		case LIGHT_STATE_STANDARD:
 			Lexi_DO_Standard_PWM(htim_pwm_led);
 			Lexi_DO_PWM_LUM_DRIVER(htim_pwm_lum_driver);
-			//Turn On EN_DRIVER
-			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13,GPIO_PIN_SET);
 			break;
 
 		case LIGHT_STATE_OFF:
@@ -99,18 +93,14 @@ void Lexi_DO_LED_PWM (TIM_HandleTypeDef htim){
 	//Check update Freq
 	if ((	lexilight.freq_cmd >= lexilight.freq_min)
 			&& (lexilight.freq_cmd <= lexilight.freq_max))
-			//&& (lexilight.freq != lexilight.freq_cmd))
 	{
-		lexilight.freq = lexilight.freq_cmd;	//Update New value of ADC Duty;
+		lexilight.freq = lexilight.freq_cmd;
 		int prescaler = (uint16_t)(lexilight.system_clock/(lexilight.freq*100) - 1);
 		__HAL_TIM_SET_PRESCALER(&htim, prescaler);
-		lexilight.freq = lexilight.freq_cmd;
 	}
-
 	//Check update Dutycycle
 	if ((	lexilight.duty_cmd >= lexilight.duty_min)
 			&& (lexilight.duty_cmd <= lexilight.duty_max))
-			//&& (lexilight.duty != lexilight.duty_cmd))
 	{
 		lexilight.duty = lexilight.duty_cmd;
 		__HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_1,lexilight.duty);
@@ -118,97 +108,34 @@ void Lexi_DO_LED_PWM (TIM_HandleTypeDef htim){
 }
 
 void Lexi_DO_Standard_PWM (TIM_HandleTypeDef htim){
-		int prescaler = 59;		//Set frequency 119 = 4KHZ
+		int prescaler = 119;		//Set frequency 119 = 4KHZ
 		__HAL_TIM_SET_PRESCALER(&htim, prescaler);
-		//__HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_2, lexilight.duty);
-		__HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_1, 100);
-
+		__HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_2, lexilight.duty);
 }
 
 void Lexi_DO_PWM_LUM_DRIVER (TIM_HandleTypeDef htim){
-
-	uint8_t value = lexilight.lum_value; // Value from 0 to 100;
-	value = 100 - value;
-	__HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_3, value);
-
-
-
-	//Todo :  do the  signal PWM_LUM_DRIVER
-	/*
-	unsigned int lux_cmd = 0;
-	unsigned int value = 0;
-	unsigned int value_2 = 0;
-	switch (lexilight.lum_level){
-		case LIGHT_LUM_LEVEL_0:
-			if (lexilight.duty <= 20){
-				lux_cmd =  900 + (1400 - 900)*(lexilight.duty - 10)/10;
-			}
-			else {
-				lux_cmd =  1400;
-			}
-			//Calcule value I en fonction de dutycycle
-			if (lexilight.state  == LIGHT_STATE_STANDARD){
-				value_2 = (unsigned int)(lux_cmd / 100) ;
-				value  = (unsigned int)((140 - value_2)*0.77);
-				lexilight.pwm_led_driver = value;
-			}
-			else{
-				value_2 = (unsigned int)(lux_cmd / lexilight.duty) ;
-				value  = (unsigned int)((140 - value_2)*0.77);
-				lexilight.pwm_led_driver = value;
-			}
+	if ((	lexilight.lum_cmd >= 0)
+			&& (lexilight.lum_cmd <= 100)
+			&& (lexilight.lum != lexilight.lum_cmd))
+	{
+		lexilight.lum = lexilight.lum_cmd;
+		if (lexilight.lum_cmd == 0){
+			//Turn off LED if LED ON
+			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
+			lexilight.state_led = 0;
+		}
+		else{
+			uint8_t value = lexilight.lum; // Value from 0 to 100;
+			value = 100 - value;
 			__HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_3, value);
-			break;
 
-		case LIGHT_LUM_LEVEL_1:
-			//Calculate lux max
-			if (lexilight.duty <= 20){
-				lux_cmd =  1000 + (2200 - 1000)*(lexilight.duty - 10)/10;
-			}
-			else {
-				lux_cmd =  2200;
-			}
-			//Calcule value I en fonction de dutycycle
-			if (lexilight.state  == LIGHT_STATE_STANDARD){
-				value_2 = (unsigned int)(lux_cmd / 100) ;
-				value  = (unsigned int)((140 - value_2)*0.77);
-				lexilight.pwm_led_driver = value;
-			}
-			else{
-				value_2 = (unsigned int)(lux_cmd / lexilight.duty) ;
-				value  = (unsigned int)((140 - value_2)*0.77);
-				lexilight.pwm_led_driver = value;
-			}
-			__HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_3, value);
-			break;
-
-		case LIGHT_LUM_LEVEL_2:
-			//Calculate lux max
-			if (lexilight.duty <= 20){
-				lux_cmd =  1200 + (2800 - 1200)*(lexilight.duty - 10)/10;
-			}
-			else {
-				lux_cmd =  2800;
-			}
-			//Calcule value I en fonction de dutycycle
-			if (lexilight.state  == LIGHT_STATE_STANDARD){
-				value_2 = (unsigned int)(lux_cmd / 100) ;
-				value  = (unsigned int)((140 - value_2)*0.77);
-				lexilight.pwm_led_driver = value;
-			}
-			else{
-				value_2 = (unsigned int)(lux_cmd / lexilight.duty) ;
-				value  = (unsigned int)((140 - value_2)*0.77);
-				lexilight.pwm_led_driver = value;
-			}
-			__HAL_TIM_SET_COMPARE(&htim, TIM_CHANNEL_3, value);
-			break;
-
-		default:
-			break;
+			//Turn on LED if LED OFF
+			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
+			lexilight.state_led = 1;
+		}
 	}
-	*/
 }
+
 //Get function
 unsigned int Lexi_Get_Duty(){
 	return lexilight.duty;
@@ -235,16 +162,20 @@ unsigned int Lexi_Get_Led_State(){
 }
 //Set function
 void Lexi_Set_State_OFF (){
-	lexilight.state = LIGHT_STATE_OFF;
+	Lexi_Set_Slider_Last_Luminosity();
+	lexilight.lum_cmd = 0;
 }
 void Lexi_Set_State_ON (){
-	lexilight.state = LIGHT_STATE_ON;
+	//lexilight.state = LIGHT_STATE_ON;
+	Lexi_Get_Slider_Last_Luminosity();
 }
 void Lexi_Set_State_STANDARD (){
 	lexilight.state = LIGHT_STATE_STANDARD;
+	Lexi_Get_Slider_Last_Luminosity();
 }
 void Lexi_Set_State_LEXI (){
 	lexilight.state = LIGHT_STATE_LEXI;
+	Lexi_Get_Slider_Last_Luminosity();
 }
 void Lexi_Set_Duty( unsigned int value){
 	if (value >=40){
@@ -270,21 +201,52 @@ void Lexi_Set_Freq( unsigned int value){
 void Lexi_Set_Luminosity( unsigned int value){
 	lexilight.lum_value =  value;
 }
-/*
-void Lexi_RecordTime_ON_OFF_Start(){
-	lexilight.timer_on_off_start = HAL_GetTick ();
-}
-void Lexi_RecordTime_ON_OFF_End(){
-	lexilight.timer_on_off_end = HAL_GetTick ();
-}
-bool Lexi_Detect_Long_Push_ON_OFF (){
-	if ((lexilight.timer_on_off_end - lexilight.timer_on_off_start) > 1500 ) //Time in milisecond
-	{
+
+
+bool Lexi_Set_Slider_Speed(unsigned int value ){
+	if ((value  <= 50 )&& (value >= 0 )){
+		lexilight.slider_speed  = value;
+		lexilight.freq_cmd = (unsigned int )(LEXILIGHT_FREQUENCY_MIN + value *(LEXILIGHT_FREQUENCY_MAX - LEXILIGHT_FREQUENCY_MIN)/50);
 		return true;
 	}
-	else
-	{
-		return false;
-	}
+	return false;
 }
-*/
+bool Lexi_Set_Slider_Strength(unsigned int value ){
+	if ((value  <= 50 )&& (value >= 0 )){
+		lexilight.slider_strength  = value;
+		lexilight.duty_cmd = (unsigned int )(LEXILIGHT_DUTY_MIN + value *(LEXILIGHT_DUTY_MAX - LEXILIGHT_DUTY_MIN)/50);
+		return true;
+	}
+	return false;
+}
+bool Lexi_Set_Slider_Luminosity(unsigned int value ){
+	if ((value  <= 100 )&& (value >= 0 )){
+		lexilight.slider_lum  = value;
+		lexilight.lum_cmd = value;
+		Lexi_Set_Slider_Last_Luminosity();
+		return true;
+	}
+	return false;
+}
+
+void Lexi_Set_Slider_Last_Luminosity(){
+	lexilight.slider_lum_last = lexilight.lum_cmd;
+}
+
+void Lexi_Get_Slider_Last_Luminosity(){
+	lexilight.lum_cmd = lexilight.slider_lum_last;
+}
+
+
+unsigned int Lexi_Get_Slider_Speed(){
+	return lexilight.slider_speed;
+}
+unsigned int Lexi_Get_Slider_Strength(){
+	return lexilight.slider_strength;
+}
+unsigned int Lexi_Get_Slider_Luminosity(){
+	return lexilight.slider_lum;
+}
+
+
+

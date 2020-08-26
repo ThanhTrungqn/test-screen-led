@@ -172,6 +172,126 @@
     <Filter Include="Header Files\generated\gui_generated\common">
       <UniqueIdentifier>79C2D52C-0900-96EA-378D-FB8C275973D1</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\screen2_screen">
+      <UniqueIdentifier>F4282104-5510-096D-0FEF-DD5400B8E097</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screen2_screen">
+      <UniqueIdentifier>843C46CC-FB64-77E7-2647-95E2EBDBC49E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screen2_screen">
+      <UniqueIdentifier>32CBF464-4D7E-4C8E-A13A-7BDDDA469349</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screen2_screen">
+      <UniqueIdentifier>1F5859A1-AEE6-2398-BE7E-9961D85EE514</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screencontrolsliderstrength_screen">
+      <UniqueIdentifier>3B40D7C4-FBBB-F002-9845-69D4E91A5E0B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screencontrolsliderstrength_screen">
+      <UniqueIdentifier>568D6565-1611-42D8-6730-B6831C51AD64</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screencontrolsliderstrength_screen">
+      <UniqueIdentifier>2837B30E-7C5B-52A2-AF78-431B1F2F3515</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screencontrolsliderstrength_screen">
+      <UniqueIdentifier>F9D83BB5-9BE0-C6D4-9E7A-9644F754D0E4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screencontrolsliderbrightness_screen">
+      <UniqueIdentifier>570B8848-106A-FE32-0119-C06CAA0A8825</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screencontrolsliderbrightness_screen">
+      <UniqueIdentifier>356C6E1F-C79A-8932-6ADA-47DBDC9254B4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screencontrolsliderspeed_screen">
+      <UniqueIdentifier>8D611E4C-C384-9283-D933-BB65420C59AE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screencontrolsliderspeed_screen">
+      <UniqueIdentifier>E8D35633-F6D3-D464-13C0-318EA31078DF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screencontrolsliderspeed_screen">
+      <UniqueIdentifier>0B2E866C-6DED-5F58-3137-1C1025821008</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screencontrolsliderspeed_screen">
+      <UniqueIdentifier>E83AC133-5C35-40D2-5EBA-EFBA9B0C308C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screencontrolsliderbrightness_screen">
+      <UniqueIdentifier>277DAFB3-0633-45CB-E89C-BCF295F1741E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screencontrolsliderbrightness_screen">
+      <UniqueIdentifier>A4E0B90C-B958-572B-1403-7685310C76F7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screencontrollampreading_screen">
+      <UniqueIdentifier>93E466E6-76F0-ABAB-A141-BE77BF948031</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screencontrollampreading_screen">
+      <UniqueIdentifier>DC3982D9-6378-9D22-F58E-E0B9933148FC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screencontrollampnormal_screen">
+      <UniqueIdentifier>0D313581-0C39-D2EC-2049-AE0DA1EB28F4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screencontrollampnormal_screen">
+      <UniqueIdentifier>5AE0E821-F175-2C7E-76FA-1DBCDCBB239A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screencontrollampnormal_screen">
+      <UniqueIdentifier>4E8456E7-D338-1C20-2630-BCA40674F948</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screencontrollampnormal_screen">
+      <UniqueIdentifier>79C530BC-8ADA-835A-991A-560F753D492B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screencontrollampreading_screen">
+      <UniqueIdentifier>5F508236-4F3D-9733-DB3F-CCDD4F2BBD05</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screencontrollampreading_screen">
+      <UniqueIdentifier>269ABFAE-2471-7C0A-2BD9-489420331BC1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screenmenusettinglamp_screen">
+      <UniqueIdentifier>C7EB2E87-C08A-2516-305D-CFD80E712677</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screenmenusettinglamp_screen">
+      <UniqueIdentifier>2B4A1285-C912-011D-46F3-3106AF78DEDA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screenmenusettinglamp_screen">
+      <UniqueIdentifier>8C8A0635-4EBE-3BDE-18D2-1B28F1FA02FE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screenmenusettinglamp_screen">
+      <UniqueIdentifier>747CECE5-028E-019D-490D-949FADFD94F7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screenwelcomewarning_screen">
+      <UniqueIdentifier>3AA43DB3-1A4C-C42E-D67C-355255B89661</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screenwelcomewarning_screen">
+      <UniqueIdentifier>61CED41D-9CF0-2314-29D0-FE0F43E554AF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screenmenusettingbattery_screen">
+      <UniqueIdentifier>3948DE73-FD21-4241-89FA-1849036D35A3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screenmenusettingbattery_screen">
+      <UniqueIdentifier>31E2D07E-EC02-D46A-4D28-5C8A42D5A129</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screenmenusettingbattery_screen">
+      <UniqueIdentifier>173064C7-B17A-F378-9EBC-57F568238B3C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screenmenusettingbattery_screen">
+      <UniqueIdentifier>05300D81-03CA-824F-6008-463DA9FAD507</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screenwelcomewarning_screen">
+      <UniqueIdentifier>81542487-C4AB-ECC6-39B9-E60ABF2FC93F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screenwelcomewarning_screen">
+      <UniqueIdentifier>AF3BF021-FCF7-509B-32B4-1D41D595FF0B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\screenwelcomeanimation_screen">
+      <UniqueIdentifier>1873EEA2-E49A-01F6-5F49-5A4B2D090043</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\screenwelcomeanimation_screen">
+      <UniqueIdentifier>A7F19E8D-9E16-7E84-59A9-54A19F18C08B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\screenwelcomeanimation_screen">
+      <UniqueIdentifier>7A7E0CF6-2043-A6E6-03BA-06BBAE60EE07</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\screenwelcomeanimation_screen">
+      <UniqueIdentifier>79F82F76-9339-5080-5F51-11A4D9D872D2</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -209,6 +329,96 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\Screen1ViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\screen1_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screen2_screen\Screen2Presenter.cpp">
+      <Filter>Source Files\gui\screen2_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screen2_screen\Screen2View.cpp">
+      <Filter>Source Files\gui\screen2_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screen2_screen\Screen2ViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screen2_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrolsliderstrength_screen\ScreenControlSliderStrengthPresenter.cpp">
+      <Filter>Source Files\gui\screencontrolsliderstrength_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrolsliderstrength_screen\ScreenControlSliderStrengthView.cpp">
+      <Filter>Source Files\gui\screencontrolsliderstrength_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screencontrolsliderstrength_screen\ScreenControlSliderStrengthViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screencontrolsliderstrength_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrolsliderbrightness_screen\ScreenControlSliderBrightnessPresenter.cpp">
+      <Filter>Source Files\gui\screencontrolsliderbrightness_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrolsliderbrightness_screen\ScreenControlSliderBrightnessView.cpp">
+      <Filter>Source Files\gui\screencontrolsliderbrightness_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screencontrolsliderbrightness_screen\ScreenControlSliderBrightnessViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screencontrolsliderbrightness_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrolsliderspeed_screen\ScreenControlSliderSpeedPresenter.cpp">
+      <Filter>Source Files\gui\screencontrolsliderspeed_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrolsliderspeed_screen\ScreenControlSliderSpeedView.cpp">
+      <Filter>Source Files\gui\screencontrolsliderspeed_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screencontrolsliderspeed_screen\ScreenControlSliderSpeedViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screencontrolsliderspeed_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrollampnormal_screen\ScreenControlLampNormalPresenter.cpp">
+      <Filter>Source Files\gui\screencontrollampnormal_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrollampnormal_screen\ScreenControlLampNormalView.cpp">
+      <Filter>Source Files\gui\screencontrollampnormal_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screencontrollampnormal_screen\ScreenControlLampNormalViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screencontrollampnormal_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrollampreading_screen\ScreenControlLampReadingPresenter.cpp">
+      <Filter>Source Files\gui\screencontrollampreading_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screencontrollampreading_screen\ScreenControlLampReadingView.cpp">
+      <Filter>Source Files\gui\screencontrollampreading_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screencontrollampreading_screen\ScreenControlLampReadingViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screencontrollampreading_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenmenusettinglamp_screen\ScreenMenuSettingLampPresenter.cpp">
+      <Filter>Source Files\gui\screenmenusettinglamp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenmenusettinglamp_screen\ScreenMenuSettingLampView.cpp">
+      <Filter>Source Files\gui\screenmenusettinglamp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screenmenusettinglamp_screen\ScreenMenuSettingLampViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screenmenusettinglamp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenmenusettingbattery_screen\ScreenMenuSettingBatteryPresenter.cpp">
+      <Filter>Source Files\gui\screenmenusettingbattery_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenmenusettingbattery_screen\ScreenMenuSettingBatteryView.cpp">
+      <Filter>Source Files\gui\screenmenusettingbattery_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screenmenusettingbattery_screen\ScreenMenuSettingBatteryViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screenmenusettingbattery_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenwelcomewarning_screen\ScreenWelcomeWarningPresenter.cpp">
+      <Filter>Source Files\gui\screenwelcomewarning_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenwelcomewarning_screen\ScreenWelcomeWarningView.cpp">
+      <Filter>Source Files\gui\screenwelcomewarning_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screenwelcomewarning_screen\ScreenWelcomeWarningViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screenwelcomewarning_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenwelcomeanimation_screen\ScreenWelcomeAnimationPresenter.cpp">
+      <Filter>Source Files\gui\screenwelcomeanimation_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\screenwelcomeanimation_screen\ScreenWelcomeAnimationView.cpp">
+      <Filter>Source Files\gui\screenwelcomeanimation_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\screenwelcomeanimation_screen\ScreenWelcomeAnimationViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\screenwelcomeanimation_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -651,6 +861,96 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
       <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screen2_screen\Screen2Presenter.hpp">
+      <Filter>Header Files\gui\screen2_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screen2_screen\Screen2View.hpp">
+      <Filter>Header Files\gui\screen2_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen2_screen\Screen2ViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screen2_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrolsliderstrength_screen\ScreenControlSliderStrengthPresenter.hpp">
+      <Filter>Header Files\gui\screencontrolsliderstrength_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrolsliderstrength_screen\ScreenControlSliderStrengthView.hpp">
+      <Filter>Header Files\gui\screencontrolsliderstrength_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screencontrolsliderstrength_screen\ScreenControlSliderStrengthViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screencontrolsliderstrength_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrolsliderbrightness_screen\ScreenControlSliderBrightnessPresenter.hpp">
+      <Filter>Header Files\gui\screencontrolsliderbrightness_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrolsliderbrightness_screen\ScreenControlSliderBrightnessView.hpp">
+      <Filter>Header Files\gui\screencontrolsliderbrightness_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screencontrolsliderbrightness_screen\ScreenControlSliderBrightnessViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screencontrolsliderbrightness_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrolsliderspeed_screen\ScreenControlSliderSpeedPresenter.hpp">
+      <Filter>Header Files\gui\screencontrolsliderspeed_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrolsliderspeed_screen\ScreenControlSliderSpeedView.hpp">
+      <Filter>Header Files\gui\screencontrolsliderspeed_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screencontrolsliderspeed_screen\ScreenControlSliderSpeedViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screencontrolsliderspeed_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrollampnormal_screen\ScreenControlLampNormalPresenter.hpp">
+      <Filter>Header Files\gui\screencontrollampnormal_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrollampnormal_screen\ScreenControlLampNormalView.hpp">
+      <Filter>Header Files\gui\screencontrollampnormal_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screencontrollampnormal_screen\ScreenControlLampNormalViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screencontrollampnormal_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrollampreading_screen\ScreenControlLampReadingPresenter.hpp">
+      <Filter>Header Files\gui\screencontrollampreading_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screencontrollampreading_screen\ScreenControlLampReadingView.hpp">
+      <Filter>Header Files\gui\screencontrollampreading_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screencontrollampreading_screen\ScreenControlLampReadingViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screencontrollampreading_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenmenusettinglamp_screen\ScreenMenuSettingLampPresenter.hpp">
+      <Filter>Header Files\gui\screenmenusettinglamp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenmenusettinglamp_screen\ScreenMenuSettingLampView.hpp">
+      <Filter>Header Files\gui\screenmenusettinglamp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screenmenusettinglamp_screen\ScreenMenuSettingLampViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screenmenusettinglamp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenmenusettingbattery_screen\ScreenMenuSettingBatteryPresenter.hpp">
+      <Filter>Header Files\gui\screenmenusettingbattery_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenmenusettingbattery_screen\ScreenMenuSettingBatteryView.hpp">
+      <Filter>Header Files\gui\screenmenusettingbattery_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screenmenusettingbattery_screen\ScreenMenuSettingBatteryViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screenmenusettingbattery_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenwelcomewarning_screen\ScreenWelcomeWarningPresenter.hpp">
+      <Filter>Header Files\gui\screenwelcomewarning_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenwelcomewarning_screen\ScreenWelcomeWarningView.hpp">
+      <Filter>Header Files\gui\screenwelcomewarning_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screenwelcomewarning_screen\ScreenWelcomeWarningViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screenwelcomewarning_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenwelcomeanimation_screen\ScreenWelcomeAnimationPresenter.hpp">
+      <Filter>Header Files\gui\screenwelcomeanimation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\screenwelcomeanimation_screen\ScreenWelcomeAnimationView.hpp">
+      <Filter>Header Files\gui\screenwelcomeanimation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screenwelcomeanimation_screen\ScreenWelcomeAnimationViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\screenwelcomeanimation_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

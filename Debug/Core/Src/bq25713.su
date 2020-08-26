@@ -1,0 +1,7 @@
+bq25713.c:12:6:BQ25713_Init	16	static
+bq25713.c:60:6:BQ25713_Default_Charge	16	static
+bq25713.c:91:6:BQ25713_Task	16	static
+bq25713.c:245:9:BQ25713_Get_VBat	4	static
+bq25713.c:248:9:BQ25713_Get_IsCharge	4	static
+bq25713.c:252:6:read_register_16	24	static
+bq25713.c:260:6:write_register_16	32	static

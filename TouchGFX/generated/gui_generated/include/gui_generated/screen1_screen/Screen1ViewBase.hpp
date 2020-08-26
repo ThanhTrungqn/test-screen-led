@@ -12,7 +12,8 @@
 #include <touchgfx/containers/Slider.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/RadioButton.hpp>
+#include <touchgfx/widgets/RadioButtonGroup.hpp>
 
 class Screen1ViewBase : public touchgfx::View<Screen1Presenter>
 {
@@ -20,6 +21,35 @@ public:
     Screen1ViewBase();
     virtual ~Screen1ViewBase() {}
     virtual void setupScreen();
+    virtual void handleKeyEvent(uint8_t key);
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void Update_Luminosity(int value)
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void Update_Freq(int value)
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void Update_Duty(int value)
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void Update_Mode_Reading_ON()
+    {
+        // Override and implement this function in Screen1
+    }
+
+    virtual void Update_Mode_Reading_OFF()
+    {
+        // Override and implement this function in Screen1
+    }
 
 protected:
     FrontendApplication& application() {
@@ -42,9 +72,10 @@ protected:
     touchgfx::TextAreaWithOneWildcard textArea_speed_height;
     touchgfx::TextArea textArea3_1;
     touchgfx::Image image2_1;
-    touchgfx::Slider slider1;
+    touchgfx::Slider slider_luminosity;
     touchgfx::TextArea textArea4;
-    touchgfx::ToggleButton toggleButton1;
+    touchgfx::RadioButton radioButton1;
+    touchgfx::RadioButtonGroup<1> radioButtonGroup1;
 
     /*
      * Wildcard Buffers
@@ -64,11 +95,15 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<Screen1ViewBase, const touchgfx::Slider&, int> sliderValueChangedCallback;
+    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&> radioButtonSelectedCallback;
+    touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&> radioButtonDeselectedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void sliderValueChangedCallbackHandler(const touchgfx::Slider& src, int value);
+    void radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton& src);
+    void radioButtonDeselectedCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

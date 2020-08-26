@@ -15,7 +15,7 @@ extern "C" {
 #include "main.h"
 #include <stdbool.h>
 
-#define SYSTEM_CLOCK_PER_SECOND 		16000000  //48000000
+#define SYSTEM_CLOCK_PER_SECOND 		16000000
 #define LEXILIGHT_DUTY_INTERVAL 		100		//Level of Luminosity from 0 to 100
 #define LEXILIGHT_FREQUENCY_MAX 		120		//Need Value (max +1)
 #define LEXILIGHT_FREQUENCY_MIN 		65
@@ -25,6 +25,8 @@ extern "C" {
 #define LEXILIGHT_DUTY_MIN 				10
 #define LEXILIGHT_ADC_VARIANT			10 	//If variant >  10 value; will update
 #define LEXILIGHT_ADC_BIT				10	//Change if Varier
+#define LEXILIGHT_SLIDER_MAX			50
+#define LEXILIGHT_SLIDER_MIN			0
 
 typedef enum
 {
@@ -50,22 +52,29 @@ typedef enum
 
 typedef struct {
 	unsigned long system_clock;
-    unsigned int duty;
-    unsigned int freq;
-    unsigned int duty_cmd;
-    unsigned int freq_cmd;
     unsigned int duty_max;
     unsigned int duty_min;
     unsigned int freq_max;
     unsigned int freq_min;
-	unsigned int adc_duty_raw;
-	unsigned int adc_freq_raw;
-	unsigned int adc_duty_new;
-	unsigned int adc_freq_new;
-	unsigned int adc_variant;
-	unsigned int adc_number_step;
+
+    unsigned int slider_speed;
+    unsigned int slider_strength;
+    unsigned int slider_lum;
+    unsigned int slider_lum_last;
+
+    unsigned int duty;
+    unsigned int freq;
+    unsigned int lum;
+    unsigned int state_led;
+
+    unsigned int duty_cmd;
+    unsigned int freq_cmd;
+    unsigned int lum_cmd;
+
 	unsigned int timer_on_off_start;
 	unsigned int timer_on_off_end;
+
+
 	unsigned int pwm_led_driver;
 	unsigned int lum_value;
 	LIGHT_STATES state;
@@ -86,13 +95,31 @@ void Lexi_DO_PWM_LUM_DRIVER (TIM_HandleTypeDef htim);
 unsigned int Lexi_Get_Duty();
 unsigned int Lexi_Get_Freq();
 unsigned int Lexi_Get_Luminosity();
-unsigned int Lexi_Get_Led_State_ON();
+unsigned int Lexi_Get_Led_State();
 //Set function
 void Lexi_Set_State_OFF ();
 void Lexi_Set_State_ON ();
 void Lexi_Set_State_STANDARD ();
-void Lexi_Set_Duty( unsigned int value );
 void Lexi_Set_State_LEXI ();
+void Lexi_Set_Duty( unsigned int value );
 void Lexi_Set_Freq( unsigned int value);
 void Lexi_Set_Luminosity( unsigned int value);
+
+
+
+bool Lexi_Set_Slider_Speed(unsigned int value );
+bool Lexi_Set_Slider_Strength(unsigned int value );
+bool Lexi_Set_Slider_Luminosity(unsigned int value );
+void Lexi_Set_Slider_Last_Luminosity();
+void Lexi_Get_Slider_Last_Luminosity();
+
+unsigned int Lexi_Get_Slider_Speed();
+unsigned int Lexi_Get_Slider_Strength();
+unsigned int Lexi_Get_Slider_Luminosity();
+
+
+
 #endif /* INC_LEXILIGHT_H_ */
+#ifdef __cplusplus
+}
+#endif

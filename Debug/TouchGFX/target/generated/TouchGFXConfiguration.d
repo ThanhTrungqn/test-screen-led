@@ -22,35 +22,39 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/TextProvider.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/TextureMapTypes.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp \
- ../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
- ../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
- ../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/BlitOp.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/events/ClickEvent.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Event.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/events/DragEvent.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/events/GestureEvent.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/UIEventListener.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/BlitOp.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/DMA.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Atomic.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/FrameBufferAllocator.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp \
  ../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp \
  ../Middlewares/ST/touchgfx/framework/include/platform/driver/button/ButtonController.hpp \
  ../Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/SnapshotWidget.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
+ ../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
  ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/JSMOCHelper.hpp \
  ../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp \
  ../TouchGFX/gui/include/gui/model/Model.hpp \
- ../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp \
- ../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp \
- ../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp \
+ ../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp \
  ../TouchGFX/gui/include/gui/model/ModelListener.hpp ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
@@ -86,14 +90,49 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Slider.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
+ ../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Slider.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButton.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp \
+ ../TouchGFX/gui/include/gui/screencontrolsliderbrightness_screen/ScreenControlSliderBrightnessView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screencontrolsliderbrightness_screen/ScreenControlSliderBrightnessViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screencontrolsliderbrightness_screen/ScreenControlSliderBrightnessPresenter.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
+ ../TouchGFX/gui/include/gui/screencontrolsliderstrength_screen/ScreenControlSliderStrengthView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screencontrolsliderstrength_screen/ScreenControlSliderStrengthViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screencontrolsliderstrength_screen/ScreenControlSliderStrengthPresenter.hpp \
+ ../TouchGFX/gui/include/gui/screencontrolsliderspeed_screen/ScreenControlSliderSpeedView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screencontrolsliderspeed_screen/ScreenControlSliderSpeedViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screencontrolsliderspeed_screen/ScreenControlSliderSpeedPresenter.hpp \
+ ../TouchGFX/gui/include/gui/screencontrollampreading_screen/ScreenControlLampReadingView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screencontrollampreading_screen/ScreenControlLampReadingViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screencontrollampreading_screen/ScreenControlLampReadingPresenter.hpp \
+ ../TouchGFX/gui/include/gui/screencontrollampnormal_screen/ScreenControlLampNormalView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screencontrollampnormal_screen/ScreenControlLampNormalViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screencontrollampnormal_screen/ScreenControlLampNormalPresenter.hpp \
+ ../TouchGFX/gui/include/gui/screenmenusettinglamp_screen/ScreenMenuSettingLampView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screenmenusettinglamp_screen/ScreenMenuSettingLampViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screenmenusettinglamp_screen/ScreenMenuSettingLampPresenter.hpp \
+ ../TouchGFX/gui/include/gui/screenmenusettingbattery_screen/ScreenMenuSettingBatteryView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screenmenusettingbattery_screen/ScreenMenuSettingBatteryViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screenmenusettingbattery_screen/ScreenMenuSettingBatteryPresenter.hpp \
+ ../TouchGFX/gui/include/gui/screenwelcomewarning_screen/ScreenWelcomeWarningView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screenwelcomewarning_screen/ScreenWelcomeWarningViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screenwelcomewarning_screen/ScreenWelcomeWarningPresenter.hpp \
+ ../TouchGFX/gui/include/gui/screenwelcomeanimation_screen/ScreenWelcomeAnimationView.hpp \
+ ../TouchGFX/generated/gui_generated/include/gui_generated/screenwelcomeanimation_screen/ScreenWelcomeAnimationViewBase.hpp \
+ ../TouchGFX/gui/include/gui/screenwelcomeanimation_screen/ScreenWelcomeAnimationPresenter.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/MoveAnimator.hpp \
  ../TouchGFX/generated/images/include/BitmapDatabase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/platform/driver/lcd/LCD16bpp.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/OSWrappers.hpp \
@@ -146,13 +185,13 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Utils.hpp:
 
-../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/SlideTransition.hpp:
 
-../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/BlitOp.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/events/ClickEvent.hpp:
 
@@ -164,14 +203,6 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/UIEventListener.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/BlitOp.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp:
-
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/DMA.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Atomic.hpp:
@@ -180,17 +211,33 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:
 
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:
+
 ../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/platform/driver/button/ButtonController.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/platform/core/MCUInstrumentation.hpp:
 
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/SnapshotWidget.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
+
+../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:
+
 ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/JSMOCHelper.hpp:
 
@@ -198,11 +245,11 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
 
 ../TouchGFX/gui/include/gui/model/Model.hpp:
 
-../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:
+../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:
 
-../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:
+../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:
 
-../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp:
+../TouchGFX/gui/include/gui/screen2_screen/Screen2Presenter.hpp:
 
 ../TouchGFX/gui/include/gui/model/ModelListener.hpp:
 
@@ -276,21 +323,91 @@ TouchGFX/target/generated/TouchGFXConfiguration.o: \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
+
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
+
+../TouchGFX/gui/include/gui/screen1_screen/Screen1View.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screen1_screen/Screen1ViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screen1_screen/Screen1Presenter.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Slider.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButton.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/RadioButtonGroup.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
+../TouchGFX/gui/include/gui/screencontrolsliderbrightness_screen/ScreenControlSliderBrightnessView.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+../TouchGFX/generated/gui_generated/include/gui_generated/screencontrolsliderbrightness_screen/ScreenControlSliderBrightnessViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screencontrolsliderbrightness_screen/ScreenControlSliderBrightnessPresenter.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
+
+../TouchGFX/gui/include/gui/screencontrolsliderstrength_screen/ScreenControlSliderStrengthView.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screencontrolsliderstrength_screen/ScreenControlSliderStrengthViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screencontrolsliderstrength_screen/ScreenControlSliderStrengthPresenter.hpp:
+
+../TouchGFX/gui/include/gui/screencontrolsliderspeed_screen/ScreenControlSliderSpeedView.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screencontrolsliderspeed_screen/ScreenControlSliderSpeedViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screencontrolsliderspeed_screen/ScreenControlSliderSpeedPresenter.hpp:
+
+../TouchGFX/gui/include/gui/screencontrollampreading_screen/ScreenControlLampReadingView.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screencontrollampreading_screen/ScreenControlLampReadingViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screencontrollampreading_screen/ScreenControlLampReadingPresenter.hpp:
+
+../TouchGFX/gui/include/gui/screencontrollampnormal_screen/ScreenControlLampNormalView.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screencontrollampnormal_screen/ScreenControlLampNormalViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screencontrollampnormal_screen/ScreenControlLampNormalPresenter.hpp:
+
+../TouchGFX/gui/include/gui/screenmenusettinglamp_screen/ScreenMenuSettingLampView.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screenmenusettinglamp_screen/ScreenMenuSettingLampViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screenmenusettinglamp_screen/ScreenMenuSettingLampPresenter.hpp:
+
+../TouchGFX/gui/include/gui/screenmenusettingbattery_screen/ScreenMenuSettingBatteryView.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screenmenusettingbattery_screen/ScreenMenuSettingBatteryViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screenmenusettingbattery_screen/ScreenMenuSettingBatteryPresenter.hpp:
+
+../TouchGFX/gui/include/gui/screenwelcomewarning_screen/ScreenWelcomeWarningView.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screenwelcomewarning_screen/ScreenWelcomeWarningViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screenwelcomewarning_screen/ScreenWelcomeWarningPresenter.hpp:
+
+../TouchGFX/gui/include/gui/screenwelcomeanimation_screen/ScreenWelcomeAnimationView.hpp:
+
+../TouchGFX/generated/gui_generated/include/gui_generated/screenwelcomeanimation_screen/ScreenWelcomeAnimationViewBase.hpp:
+
+../TouchGFX/gui/include/gui/screenwelcomeanimation_screen/ScreenWelcomeAnimationPresenter.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/MoveAnimator.hpp:
 
 ../TouchGFX/generated/images/include/BitmapDatabase.hpp:
 

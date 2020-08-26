@@ -47,17 +47,17 @@ void touchgfx_init()
   (void)heap; // we need to obtain the reference above to initialize the frontend heap.
 
   hal.initialize();
-  hal.enableLCDControllerInterrupt();
-  hal.enableInterrupts();
 }
 
 void touchgfx_taskEntry()
 {
  /*
-  * This function check if a VSYNC has occured.
-  * If VSYNC has occured, signal TouchGFX to start a rendering
+  * Main event loop. Will wait for VSYNC signal, and then process next frame. Call
+  * this function from your GUI task.
+  *
+  * Note This function never returns
   */
-  OSWrappers::waitForVSync();
+  hal.taskEntry();
 }
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

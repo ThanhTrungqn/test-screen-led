@@ -60,11 +60,41 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define CMD_LED2_Pin GPIO_PIN_2
+#define CMD_LED2_GPIO_Port GPIOE
+#define CMD_LED3_Pin GPIO_PIN_3
+#define CMD_LED3_GPIO_Port GPIOE
+#define CMD_LED4_Pin GPIO_PIN_4
+#define CMD_LED4_GPIO_Port GPIOE
+#define CMD_LED5_Pin GPIO_PIN_5
+#define CMD_LED5_GPIO_Port GPIOE
+#define CMD_LED6_Pin GPIO_PIN_6
+#define CMD_LED6_GPIO_Port GPIOE
+#define CHRG_OK_Pin GPIO_PIN_13
+#define CHRG_OK_GPIO_Port GPIOC
+#define CHRG_OK_EXTI_IRQn EXTI15_10_IRQn
+#define PROCHOT_Pin GPIO_PIN_14
+#define PROCHOT_GPIO_Port GPIOC
+#define EN_OTG_Pin GPIO_PIN_15
+#define EN_OTG_GPIO_Port GPIOC
 #define TP_RESET_Pin GPIO_PIN_9
 #define TP_RESET_GPIO_Port GPIOD
 #define TP_INT_Pin GPIO_PIN_11
 #define TP_INT_GPIO_Port GPIOD
 #define TP_INT_EXTI_IRQn EXTI15_10_IRQn
+#define EN_DRIVER_Pin GPIO_PIN_13
+#define EN_DRIVER_GPIO_Port GPIOD
+#define CMD_ON_OFF_Pin GPIO_PIN_14
+#define CMD_ON_OFF_GPIO_Port GPIOD
+#define CMD_ON_OFF_EXTI_IRQn EXTI15_10_IRQn
+#define CS_LCD_Pin GPIO_PIN_0
+#define CS_LCD_GPIO_Port GPIOD
+#define CMD_ALIM_LCD_Pin GPIO_PIN_1
+#define CMD_ALIM_LCD_GPIO_Port GPIOD
+#define CMD_ALIM_BLE_Pin GPIO_PIN_6
+#define CMD_ALIM_BLE_GPIO_Port GPIOD
+#define CMD_LED1_Pin GPIO_PIN_1
+#define CMD_LED1_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

@@ -15,21 +15,30 @@
   ******************************************************************************
   */
 #include <touchgfx/hal/OSWrappers.hpp>
-#include <TouchGFXHAL.hpp>
 #include <stm32f4xx_hal.h>
+#include <touchgfx/hal/GPIO.hpp>
+#include <touchgfx/hal/HAL.hpp>
+#include "FreeRTOS.h"
+#include "task.h"
+#include "queue.h"
+#include "semphr.h"
 
-static volatile uint32_t fb_sem;
-static volatile uint32_t vsync_sem;
+static xSemaphoreHandle frame_buffer_sem;
+static xQueueHandle vsync_q = 0;
 
 using namespace touchgfx;
+
+// Just a dummy value to insert in the VSYNC queue.
+static uint8_t dummy = 0x5a;
 
 /*
  * Initialize frame buffer semaphore and queue/mutex for VSYNC signal.
  */
 void OSWrappers::initialize()
 {
-  fb_sem = 0;
-  vsync_sem = 0;
+    vSemaphoreCreateBinary(frame_buffer_sem);
+    // Create a queue of length 1
+    vsync_q = xQueueGenericCreate(1, 1, 0);
 }
 
 /*
@@ -37,8 +46,7 @@ void OSWrappers::initialize()
  */
 void OSWrappers::takeFrameBufferSemaphore()
 {
-  while(fb_sem);
-  fb_sem = 1;
+    xSemaphoreTake(frame_buffer_sem, portMAX_DELAY);
 }
 
 /*
@@ -46,7 +54,7 @@ void OSWrappers::takeFrameBufferSemaphore()
  */
 void OSWrappers::giveFrameBufferSemaphore()
 {
-  fb_sem = 0;
+    xSemaphoreGive(frame_buffer_sem);
 }
 
 /*
@@ -58,7 +66,7 @@ void OSWrappers::giveFrameBufferSemaphore()
  */
 void OSWrappers::tryTakeFrameBufferSemaphore()
 {
-  fb_sem = 1;
+    xSemaphoreTake(frame_buffer_sem, 0);
 }
 
 /*
@@ -70,7 +78,11 @@ void OSWrappers::tryTakeFrameBufferSemaphore()
  */
 void OSWrappers::giveFrameBufferSemaphoreFromISR()
 {
-  fb_sem = 0;
+    // Since this is called from an interrupt, FreeRTOS requires special handling to trigger a
+    // re-scheduling. May be applicable for other OSes as well.
+    portBASE_TYPE px = pdFALSE;
+    xSemaphoreGiveFromISR(frame_buffer_sem, &px);
+    portEND_SWITCHING_ISR(px);
 }
 
 /*
@@ -81,20 +93,29 @@ void OSWrappers::giveFrameBufferSemaphoreFromISR()
  */
 void OSWrappers::signalVSync()
 {
-  vsync_sem = 1;
+    if (vsync_q)
+    {
+        // Since this is called from an interrupt, FreeRTOS requires special handling to trigger a
+        // re-scheduling. May be applicable for other OSes as well.
+        portBASE_TYPE px = pdFALSE;
+        xQueueSendFromISR(vsync_q, &dummy, &px);
+        portEND_SWITCHING_ISR(px);
+    }
 }
 
 /*
- * This function check if a VSYNC has occured.
- * If VSYNC has occured, signal TouchGFX to start a rendering
+ * This function blocks until a VSYNC occurs.
+ *
+ * Note This function must first clear the mutex/queue and then wait for the next one to
+ * occur.
  */
 void OSWrappers::waitForVSync()
 {
-  if(vsync_sem)
-  {
-    vsync_sem = 0;
-    HAL::getInstance()->backPorchExited();
-  }
+    // First make sure the queue is empty, by trying to remove an element with 0 timeout.
+    xQueueReceive(vsync_q, &dummy, 0);
+
+    // Then, wait for next VSYNC to occur.
+    xQueueReceive(vsync_q, &dummy, portMAX_DELAY);
 }
 
 /*
@@ -112,7 +133,7 @@ void OSWrappers::waitForVSync()
  */
 void OSWrappers::taskDelay(uint16_t ms)
 {
-    HAL_Delay(ms);
+    vTaskDelay(ms);
 }
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

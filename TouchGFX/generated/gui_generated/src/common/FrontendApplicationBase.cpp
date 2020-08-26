@@ -9,8 +9,28 @@
 #include <touchgfx/Texts.hpp>
 #include <touchgfx/hal/HAL.hpp>
 #include <platform/driver/lcd/LCD16bpp.hpp>
+#include <gui/screen2_screen/Screen2View.hpp>
+#include <gui/screen2_screen/Screen2Presenter.hpp>
 #include <gui/screen1_screen/Screen1View.hpp>
 #include <gui/screen1_screen/Screen1Presenter.hpp>
+#include <gui/screencontrolsliderbrightness_screen/ScreenControlSliderBrightnessView.hpp>
+#include <gui/screencontrolsliderbrightness_screen/ScreenControlSliderBrightnessPresenter.hpp>
+#include <gui/screencontrolsliderstrength_screen/ScreenControlSliderStrengthView.hpp>
+#include <gui/screencontrolsliderstrength_screen/ScreenControlSliderStrengthPresenter.hpp>
+#include <gui/screencontrolsliderspeed_screen/ScreenControlSliderSpeedView.hpp>
+#include <gui/screencontrolsliderspeed_screen/ScreenControlSliderSpeedPresenter.hpp>
+#include <gui/screencontrollampreading_screen/ScreenControlLampReadingView.hpp>
+#include <gui/screencontrollampreading_screen/ScreenControlLampReadingPresenter.hpp>
+#include <gui/screencontrollampnormal_screen/ScreenControlLampNormalView.hpp>
+#include <gui/screencontrollampnormal_screen/ScreenControlLampNormalPresenter.hpp>
+#include <gui/screenmenusettinglamp_screen/ScreenMenuSettingLampView.hpp>
+#include <gui/screenmenusettinglamp_screen/ScreenMenuSettingLampPresenter.hpp>
+#include <gui/screenmenusettingbattery_screen/ScreenMenuSettingBatteryView.hpp>
+#include <gui/screenmenusettingbattery_screen/ScreenMenuSettingBatteryPresenter.hpp>
+#include <gui/screenwelcomewarning_screen/ScreenWelcomeWarningView.hpp>
+#include <gui/screenwelcomewarning_screen/ScreenWelcomeWarningPresenter.hpp>
+#include <gui/screenwelcomeanimation_screen/ScreenWelcomeAnimationView.hpp>
+#include <gui/screenwelcomeanimation_screen/ScreenWelcomeAnimationPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -29,15 +49,91 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
  * Screen Transition Declarations
  */
 
-// Screen1
+// Screen2
 
-void FrontendApplicationBase::gotoScreen1ScreenNoTransition()
+void FrontendApplicationBase::gotoScreen2ScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen2ScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoScreen1ScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoScreen2ScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<Screen2View, Screen2Presenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+void FrontendApplicationBase::gotoScreen2ScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen2ScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreen2ScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<Screen2View, Screen2Presenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// Screen1
+
+void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEast()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreen1ScreenSlideTransitionEastImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreen1ScreenSlideTransitionEastImpl()
+{
+    touchgfx::makeTransition<Screen1View, Screen1Presenter, touchgfx::SlideTransition<EAST>, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// ScreenControlSliderStrength
+
+void FrontendApplicationBase::gotoScreenControlSliderStrengthScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreenControlSliderStrengthScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreenControlSliderStrengthScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<ScreenControlSliderStrengthView, ScreenControlSliderStrengthPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// ScreenControlSliderSpeed
+
+void FrontendApplicationBase::gotoScreenControlSliderSpeedScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreenControlSliderSpeedScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreenControlSliderSpeedScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<ScreenControlSliderSpeedView, ScreenControlSliderSpeedPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// ScreenControlLampReading
+
+void FrontendApplicationBase::gotoScreenControlLampReadingScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreenControlLampReadingScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreenControlLampReadingScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<ScreenControlLampReadingView, ScreenControlLampReadingPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}
+
+// ScreenMenuSettingLamp
+
+void FrontendApplicationBase::gotoScreenMenuSettingLampScreenNoTransition()
+{
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplication::gotoScreenMenuSettingLampScreenNoTransitionImpl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplicationBase::gotoScreenMenuSettingLampScreenNoTransitionImpl()
+{
+    touchgfx::makeTransition<ScreenMenuSettingLampView, ScreenMenuSettingLampPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

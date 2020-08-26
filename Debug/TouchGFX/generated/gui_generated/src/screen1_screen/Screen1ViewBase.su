@@ -16,6 +16,7 @@ Drawable.hpp:415:18:virtual void touchgfx::Drawable::handleClickEvent(const touc
 Drawable.hpp:427:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	16	static
 Drawable.hpp:439:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	16	static
 Drawable.hpp:452:18:virtual void touchgfx::Drawable::handleTickEvent()	16	static
+Drawable.hpp:482:10:void touchgfx::Drawable::setTouchable(bool)	16	static
 Drawable.hpp:499:10:bool touchgfx::Drawable::isVisible() const	16	static
 Drawable.hpp:515:10:bool touchgfx::Drawable::isTouchable() const	16	static
 Drawable.hpp:563:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	16	static
@@ -59,31 +60,71 @@ TextAreaWithWildcard.hpp:35:7:touchgfx::TextAreaWithWildcardBase::~TextAreaWithW
 TextAreaWithWildcard.hpp:35:7:virtual touchgfx::TextAreaWithWildcardBase::~TextAreaWithWildcardBase()	16	static
 TextAreaWithWildcard.hpp:75:5:touchgfx::TextAreaWithOneWildcard::TextAreaWithOneWildcard()	16	static
 TextAreaWithWildcard.hpp:115:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const UnicodeChar*)	16	static
+AbstractButton.hpp:46:5:touchgfx::AbstractButton::AbstractButton()	16	static
+AbstractButton.hpp:80:10:void touchgfx::AbstractButton::setAction(touchgfx::GenericCallback<const touchgfx::AbstractButton&>&)	16	static
 AbstractButton.hpp:35:7:touchgfx::AbstractButton::~AbstractButton()	16	static
 AbstractButton.hpp:35:7:virtual touchgfx::AbstractButton::~AbstractButton()	16	static
-Button.hpp:53:13:touchgfx::Button::~Button()	16	static
-Button.hpp:53:13:virtual touchgfx::Button::~Button()	16	static
-ToggleButton.hpp:61:18:virtual void touchgfx::ToggleButton::setBitmaps(const touchgfx::Bitmap&, const touchgfx::Bitmap&)	24	static
+RadioButton.hpp:46:5:touchgfx::RadioButton::RadioButton()	16	static
+RadioButton.hpp:56:13:touchgfx::RadioButton::~RadioButton()	16	static
+RadioButton.hpp:56:13:virtual touchgfx::RadioButton::~RadioButton()	16	static
+RadioButton.hpp:115:10:void touchgfx::RadioButton::setDeselectedAction(touchgfx::GenericCallback<const touchgfx::AbstractButton&>&)	16	static
+RadioButton.hpp:169:10:void touchgfx::RadioButton::setDeselectionEnabled(bool)	16	static
+RadioButton.hpp:183:10:bool touchgfx::RadioButton::getDeselectionEnabled() const	16	static
+RadioButton.hpp:208:10:bool touchgfx::RadioButton::getSelected() const	16	static
 View.hpp:39:7:touchgfx::View<Screen1Presenter>::~View()	16	static
 View.hpp:39:7:virtual touchgfx::View<Screen1Presenter>::~View()	16	static
-Screen1ViewBase.hpp:21:13:Screen1ViewBase::~Screen1ViewBase()	16	static
-Screen1ViewBase.hpp:21:13:virtual Screen1ViewBase::~Screen1ViewBase()	16	static
+Screen1ViewBase.hpp:22:13:Screen1ViewBase::~Screen1ViewBase()	16	static
+Screen1ViewBase.hpp:22:13:virtual Screen1ViewBase::~Screen1ViewBase()	16	static
+Screen1ViewBase.hpp:29:18:virtual void Screen1ViewBase::Update_Luminosity(int)	16	static
+Screen1ViewBase.hpp:34:18:virtual void Screen1ViewBase::Update_Freq(int)	16	static
+Screen1ViewBase.hpp:39:18:virtual void Screen1ViewBase::Update_Duty(int)	16	static
+Screen1ViewBase.hpp:44:18:virtual void Screen1ViewBase::Update_Mode_Reading_ON()	16	static
+Screen1ViewBase.hpp:49:18:virtual void Screen1ViewBase::Update_Mode_Reading_OFF()	16	static
+Screen1ViewBase.hpp:55:26:FrontendApplication& Screen1ViewBase::application()	16	static
 Color.hpp:54:22:static touchgfx::colortype touchgfx::Color::getColorFrom24BitRGB(uint8_t, uint8_t, uint8_t)	24	static
-Screen1ViewBase.cpp:9:1:Screen1ViewBase::Screen1ViewBase()	152	static
-Screen1ViewBase.cpp:116:6:virtual void Screen1ViewBase::setupScreen()	16	static
-Screen1ViewBase.cpp:121:6:void Screen1ViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider&, int)	24	static
+Screen1ViewBase.cpp:9:1:Screen1ViewBase::Screen1ViewBase()	176	static
+Screen1ViewBase.cpp:124:6:virtual void Screen1ViewBase::setupScreen()	16	static
+Screen1ViewBase.cpp:130:6:virtual void Screen1ViewBase::handleKeyEvent(uint8_t)	16	static
+Screen1ViewBase.cpp:141:6:void Screen1ViewBase::sliderValueChangedCallbackHandler(const touchgfx::Slider&, int)	24	static
+Screen1ViewBase.cpp:166:6:void Screen1ViewBase::radioButtonSelectedCallbackHandler(const touchgfx::AbstractButton&)	16	static
+Screen1ViewBase.cpp:177:6:void Screen1ViewBase::radioButtonDeselectedCallbackHandler(const touchgfx::AbstractButton&)	16	static
+Callback.hpp:469:8:touchgfx::Callback<touchgfx::RadioButtonGroup<1>, const touchgfx::AbstractButton&, void, void>::~Callback()	16	static
+Callback.hpp:469:8:virtual touchgfx::Callback<touchgfx::RadioButtonGroup<1>, const touchgfx::AbstractButton&, void, void>::~Callback()	16	static
+RadioButtonGroup.hpp:68:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 1]	16	static
+RadioButtonGroup.hpp:68:13:touchgfx::RadioButtonGroup<CAPACITY>::~RadioButtonGroup() [with short unsigned int CAPACITY = 1]	16	static
 View.hpp:50:5:touchgfx::View<T>::View() [with T = Screen1Presenter]	16	static
+RadioButtonGroup.hpp:52:5:touchgfx::RadioButtonGroup<CAPACITY>::RadioButtonGroup() [with short unsigned int CAPACITY = 1]	40	static
 Callback.hpp:107:7:constexpr touchgfx::GenericCallback<const touchgfx::Slider&, int>::GenericCallback()	16	static
 Callback.hpp:405:5:touchgfx::Callback<dest_type, T1, T2, void>::Callback(dest_type*, void (dest_type::*)(T1, T2)) [with dest_type = Screen1ViewBase; T1 = const touchgfx::Slider&; T2 = int]	24	static
+Callback.hpp:167:7:constexpr touchgfx::GenericCallback<const touchgfx::AbstractButton&>::GenericCallback()	16	static
+Callback.hpp:493:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = Screen1ViewBase; T1 = const touchgfx::AbstractButton&]	24	static
+RadioButtonGroup.hpp:82:18:void touchgfx::RadioButtonGroup<CAPACITY>::add(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 1]	16	static
+RadioButtonGroup.hpp:205:10:void touchgfx::RadioButtonGroup<CAPACITY>::setRadioButtonSelectedHandler(touchgfx::GenericCallback<const touchgfx::AbstractButton&>&) [with short unsigned int CAPACITY = 1]	16	static
+RadioButtonGroup.hpp:223:10:void touchgfx::RadioButtonGroup<CAPACITY>::setRadioButtonDeselectedHandler(touchgfx::GenericCallback<const touchgfx::AbstractButton&>&) [with short unsigned int CAPACITY = 1]	16	static
+Callback.hpp:177:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = const touchgfx::AbstractButton&]	16	static
+Callback.hpp:177:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = const touchgfx::AbstractButton&]	16	static
+RadioButtonGroup.hpp:248:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonClickedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 1]	24	static
+RadioButtonGroup.hpp:277:18:void touchgfx::RadioButtonGroup<CAPACITY>::radioButtonDeselectedHandler(const touchgfx::AbstractButton&) [with short unsigned int CAPACITY = 1]	16	static
+Callback.hpp:493:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = touchgfx::RadioButtonGroup<1>; T1 = const touchgfx::AbstractButton&]	24	static
 Callback.hpp:117:13:touchgfx::GenericCallback<T1, T2, void>::~GenericCallback() [with T1 = const touchgfx::Slider&; T2 = int]	16	static
 Callback.hpp:117:13:touchgfx::GenericCallback<T1, T2, void>::~GenericCallback() [with T1 = const touchgfx::Slider&; T2 = int]	16	static
+Callback.hpp:469:8:touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&>::~Callback()	16	static
+Callback.hpp:469:8:virtual touchgfx::Callback<Screen1ViewBase, const touchgfx::AbstractButton&>::~Callback()	16	static
 Callback.hpp:379:8:touchgfx::Callback<Screen1ViewBase, const touchgfx::Slider&, int>::~Callback()	16	static
 Callback.hpp:379:8:virtual touchgfx::Callback<Screen1ViewBase, const touchgfx::Slider&, int>::~Callback()	16	static
 Image.hpp:36:7:touchgfx::Image::~Image()	16	static
 Image.hpp:36:7:virtual touchgfx::Image::~Image()	16	static
 TextAreaWithWildcard.hpp:63:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	16	static
 TextAreaWithWildcard.hpp:63:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	16	static
-ToggleButton.hpp:34:7:touchgfx::ToggleButton::~ToggleButton()	16	static
-ToggleButton.hpp:34:7:virtual touchgfx::ToggleButton::~ToggleButton()	16	static
+Callback.hpp:511:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = Screen1ViewBase; T1 = const touchgfx::AbstractButton&]	16	static
+Callback.hpp:525:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = Screen1ViewBase; T1 = const touchgfx::AbstractButton&]	16	static
 Callback.hpp:422:18:void touchgfx::Callback<dest_type, T1, T2, void>::execute(T1, T2) [with dest_type = Screen1ViewBase; T1 = const touchgfx::Slider&; T2 = int]	24	static
 Callback.hpp:436:18:bool touchgfx::Callback<dest_type, T1, T2, void>::isValid() const [with dest_type = Screen1ViewBase; T1 = const touchgfx::Slider&; T2 = int]	16	static
+RadioButtonGroup.hpp:101:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getRadioButton(uint16_t) const [with short unsigned int CAPACITY = 1]	16	static
+RadioButtonGroup.hpp:115:21:int32_t touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButtonIndex() const [with short unsigned int CAPACITY = 1]	24	static
+RadioButtonGroup.hpp:136:26:touchgfx::RadioButton* touchgfx::RadioButtonGroup<CAPACITY>::getSelectedRadioButton() const [with short unsigned int CAPACITY = 1]	24	static
+RadioButtonGroup.hpp:153:18:void touchgfx::RadioButtonGroup<CAPACITY>::setSelected(touchgfx::RadioButton&) [with short unsigned int CAPACITY = 1]	16	static
+RadioButtonGroup.hpp:170:18:void touchgfx::RadioButtonGroup<CAPACITY>::setDeselectionEnabled(bool) [with short unsigned int CAPACITY = 1]	24	static
+RadioButtonGroup.hpp:187:18:bool touchgfx::RadioButtonGroup<CAPACITY>::getDeselectionEnabled() const [with short unsigned int CAPACITY = 1]	16	static
+Callback.hpp:511:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = touchgfx::RadioButtonGroup<1>; T1 = const touchgfx::AbstractButton&]	16	static
+Callback.hpp:525:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = touchgfx::RadioButtonGroup<1>; T1 = const touchgfx::AbstractButton&]	16	static

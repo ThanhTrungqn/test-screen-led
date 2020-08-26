@@ -62,11 +62,11 @@ void Ft6236_Read(void){
 
 		//Read PosX
 		data[0] &= 0x07;
-		FT6236.PosX = data[0]<<8 | data[1];
+		FT6236.PosX = 240 - (data[0]<<8 | data[1]);
 		//Read PosY
 		Ft6236_Read_Register( 0x05, data , 2);
 		data[0] &= 0x7;
-		FT6236.PosY = (data[0] & 0x07)<<8 | data[1];
+		FT6236.PosY = 320 - ((data[0] & 0x07)<<8 | data[1]);
 
 	}
 	else {
